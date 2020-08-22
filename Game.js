@@ -10,9 +10,9 @@ class Game {
     context.font = '120px VT323';
     context.fillText('Start', 20, 170);
     context.beginPath();
-    context.moveTo(145, 260);
-    context.lineTo(100, 200);
-    context.lineTo(200, 200);
+    context.moveTo(135, 260);
+    context.lineTo(100, 230);
+    context.lineTo(170, 230);
     context.fill();
 
     this.started = false;

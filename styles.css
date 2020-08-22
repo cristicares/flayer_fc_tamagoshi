@@ -2,59 +2,55 @@ body {
   display: flex;
   justify-content: center;
   font-family: 'VT323', monospace;
-  background-color: #232980;
+  background-color: #ffe0d3;
 }
 
 .game {
   position: relative;
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 .game__body {
   position: relative;
+  width: 300px;
 }
 
-.game__body svg {
-  width: 800px;
-  fill: deeppink;
+.game img {
+  width: 750px;
 }
 
 .controls {
   position: absolute;
-  top: 718px;
-  left: 297px;
+  top: 611px;
+  left: 262px;
 }
 
 .controls__button {
   position: absolute;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: yellow;
+  width: 45px;
+  height: 45px;
+  border-radius: 40%;
+  background-color: transparent;
   cursor: pointer;
 }
 
-.controls__button:hover {
-  background-color: #d6d603;
-}
-
 .controls__button:nth-child(2) {
-  top: 20px;
-  left: 79px;
+  top: 24px;
+  left: 94px;
 }
 
 .controls__button:nth-child(3) {
-  left: 160px;
+  left: 182px;
 }
 
 .game__screen {
   position: absolute;
-  top: 360px;
-  left: 260px;
+  top: 290px;
+  left: 240px;
   background: #efefef;
-  width: 280px;
-  height: 280px;
-  border-radius: 16px;
+  width: 265px;
+  height: 260px;
+  border: #92988d 4px inset;
 }
 
 .game__screen canvas {
@@ -65,8 +61,8 @@ body {
   display: none;
   position: absolute;
   background: #efefef;
-  width: 280px;
-  height: 280px;
+  width: 265px;
+  height: 260px;
   border-radius: 16px;
 }
 
@@ -98,5 +94,10 @@ body {
 }
 
 .animation {
-  bottom: 4%;
+  bottom: 3px;
+}
+
+.shadow {
+  -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+  filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
 }
