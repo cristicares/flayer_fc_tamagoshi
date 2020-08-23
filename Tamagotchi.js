@@ -2,16 +2,16 @@ class Tamagotchi extends Animatable {
   constructor(canvas) {
     super(canvas);
 
-    const idle = new Sprite('images/Idle.png', 360, 120, 3, 1);
-    const eat = new Sprite('images/Eat.png', 640, 240, 4, 2);
-    const other = new Sprite('images/Other.png', 240, 360, 2, 3);
+    const idle = new Sprite('images/plant.png', 360, 120, 3, 1);
+    const eat = new Sprite('images/activity.png', 640, 240, 4, 2);
+    const other = new Sprite('images/otros.png', 240, 360, 2, 3);
 
     this.animations = {
       dislike: other.get(2),
       jumpRight: other.get(0),
       jumpLeft: other.get(1),
-      burger: eat.get(1),
-      candy: eat.get(0),
+      water: eat.get(1),
+      sun: eat.get(0),
       bounce: idle.get(),
     };
 
@@ -57,6 +57,7 @@ class Tamagotchi extends Animatable {
 
     function* animation() {
       if (this.eatLevel === this.maxEatLevel) {
+        setTimeout(() => {window.location.href = '/tamagotchi/index.html'}, 2000);
         yield* this.dislike();
       } else {
         this.eatLevel++;
@@ -75,9 +76,12 @@ class Tamagotchi extends Animatable {
     function* animation() {
       yield* frame(0);
       yield* frame(1);
-    };
-
-    return animation.call(this);;
+      yield* frame(0);
+      yield* frame(1);
+      yield* frame(0);
+      yield* frame(1);
+    }
+    return animation.call(this);
   }
 
   eat(food) {
@@ -88,7 +92,7 @@ class Tamagotchi extends Animatable {
         yield* frame(1);
         yield* frame(2);
         yield* frame(3);
-    };
+    }
 
     return animation.call(this);
   }
